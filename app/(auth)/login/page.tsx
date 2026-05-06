@@ -121,13 +121,6 @@ export default function LoginPage() {
         </Button>
       </form>
 
-      {/* Demo hint */}
-      <div className="mt-4 p-3 rounded-xl bg-violet-500/8 border border-violet-500/15">
-        <p className="text-xs text-violet-400 text-center">
-          Demo: <span className="font-mono font-semibold">admin@demo.com</span> / <span className="font-mono font-semibold">password123</span>
-        </p>
-      </div>
-
       <p className="text-center text-sm text-[var(--text-muted)] mt-6">
         Don&apos;t have an account?{" "}
         <Link href="/signup" className="text-violet-400 hover:text-violet-300 font-medium transition-colors">

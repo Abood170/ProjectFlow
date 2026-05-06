@@ -27,29 +27,29 @@ async function main() {
   await prisma.user.deleteMany();
 
   // ── Users ──────────────────────────────────────────────────────────────
-  const adminPassword = await bcrypt.hash("password123", 12);
+  const seedPassword = await bcrypt.hash(process.env.SEED_PASSWORD ?? "changeme", 12);
 
   const admin = await prisma.user.create({
     data: {
       name: "Alice Admin",
-      email: "admin@demo.com",
-      password: adminPassword,
+      email: process.env.SEED_ADMIN_EMAIL ?? "alice@example.com",
+      password: seedPassword,
     },
   });
 
   const member1 = await prisma.user.create({
     data: {
       name: "Bob Builder",
-      email: "bob@demo.com",
-      password: await bcrypt.hash("password123", 12),
+      email: "bob@example.com",
+      password: seedPassword,
     },
   });
 
   const member2 = await prisma.user.create({
     data: {
       name: "Carol Designer",
-      email: "carol@demo.com",
-      password: await bcrypt.hash("password123", 12),
+      email: "carol@example.com",
+      password: seedPassword,
     },
   });
 
@@ -58,9 +58,9 @@ async function main() {
   // ── Workspace ──────────────────────────────────────────────────────────
   const workspace = await prisma.workspace.create({
     data: {
-      name: "Demo Workspace",
-      slug: "demo-workspace",
-      description: "A sample workspace to explore ProjectFlow",
+      name: "My Workspace",
+      slug: "my-workspace",
+      description: "Sample workspace with project data",
       ownerId: admin.id,
     },
   });
@@ -315,14 +315,7 @@ async function main() {
 
   console.log("✅ Created activity logs");
 
-  // ── Summary ────────────────────────────────────────────────────────────
-  console.log("\n🎉 Seed complete!\n");
-  console.log("  Login credentials:");
-  console.log("  ┌─────────────────────────────────────────────────┐");
-  console.log("  │  Admin  : admin@demo.com  / password123         │");
-  console.log("  │  Member : bob@demo.com    / password123         │");
-  console.log("  │  Member : carol@demo.com  / password123         │");
-  console.log("  └─────────────────────────────────────────────────┘");
+  console.log("\n🎉 Seed complete!");
 }
 
 main()
