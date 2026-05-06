@@ -6,9 +6,7 @@ A premium, full-stack project management tool — built with Next.js, TypeScript
 
 ## Screenshot
 
-![ProjectFlow Dashboard](https://via.placeholder.com/1200x630/7c3aed/ffffff?text=ProjectFlow+Screenshot)
-
-> Replace with an actual screenshot once the app is running.
+![ProjectFlow Dashboard](public/screenshot.png)
 
 ---
 
