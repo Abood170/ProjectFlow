@@ -7,7 +7,9 @@
       "Bash(Get-ChildItem -Path \"d:\\\\Projects\\\\Project Management Tool\" -Recurse -Depth 2)",
       "Bash(Select-Object FullName)",
       "PowerShell(Get-ChildItem -Path \"d:\\\\Projects\\\\Project Management Tool\" -Recurse -Depth 3 | Where-Object { $_.PSIsContainer -or $_.Extension -match '\\\\.\\(ts|tsx|prisma|json\\)$' } | Select-Object -ExpandProperty FullName | Sort-Object | head -100)",
-      "Bash(Test-Path \"d:\\\\Projects\\\\Project Management Tool\\\\.gitignore\")"
+      "Bash(Test-Path \"d:\\\\Projects\\\\Project Management Tool\\\\.gitignore\")",
+      "Bash(npx prisma *)",
+      "PowerShell(Test-NetConnection -ComputerName \"ep-wandering-lab-apaoqdx2.c-7.us-east-1.aws.neon.tech\" -Port 5432 -InformationLevel Quiet 2>&1)"
     ]
   }
 }
