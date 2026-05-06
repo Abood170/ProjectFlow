@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3000\" -UseBasicParsing -MaximumRedirection 0 -ErrorAction Stop } catch { $_.Exception.Response.StatusCode.value__ }; $r.StatusCode)",
+      "Bash(npx tsc *)",
+      "Bash(node -e \"const p = require\\('./node_modules/next-auth/package.json'\\); console.log\\(p.version\\)\")",
+      "Bash(Get-ChildItem -Path \"d:\\\\Projects\\\\Project Management Tool\" -Recurse -Depth 2)",
+      "Bash(Select-Object FullName)",
+      "PowerShell(Get-ChildItem -Path \"d:\\\\Projects\\\\Project Management Tool\" -Recurse -Depth 3 | Where-Object { $_.PSIsContainer -or $_.Extension -match '\\\\.\\(ts|tsx|prisma|json\\)$' } | Select-Object -ExpandProperty FullName | Sort-Object | head -100)",
+      "Bash(Test-Path \"d:\\\\Projects\\\\Project Management Tool\\\\.gitignore\")"
+    ]
+  }
+}
